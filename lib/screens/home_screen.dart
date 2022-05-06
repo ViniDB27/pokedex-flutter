@@ -112,20 +112,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: AppFonts.searchText,
                   ),
                 ),
-                Container(
-                  color: Colors.transparent,
-                  width: queryData.size.width,
-                  height: queryData.size.height - 191,
-                  child: InfiniteScrollGrid(
-                    scrollDirection: Axis.vertical,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5,
-                    crossAxisCount: 3,
-                    onLoadingStart: (_) => _loadMorePokemons(),
-                    everythingLoaded: everyThingLoaded,
-                    children: _pokemons
-                        .map((pokemon) => PokemonCard(pokemon))
-                        .toList(),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.transparent,
+                    child: InfiniteScrollGrid(
+                      scrollDirection: Axis.vertical,
+                      crossAxisSpacing: 5,
+                      mainAxisSpacing: 5,
+                      crossAxisCount: 3,
+                      onLoadingStart: (_) => _loadMorePokemons(),
+                      everythingLoaded: everyThingLoaded,
+                      children: _pokemons
+                          .map((pokemon) => PokemonCard(pokemon))
+                          .toList(),
+                    ),
                   ),
                 ),
               ],

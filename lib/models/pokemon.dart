@@ -7,6 +7,7 @@ class Pokemon {
   final String image;
   final List<dynamic> types;
   final String move;
+  final Map<String, int> stats;
 
   Pokemon({
     required this.id,
@@ -17,5 +18,6 @@ class Pokemon {
     required this.image,
     required this.types,
     required this.move,
+    required this.stats,
   });
 }

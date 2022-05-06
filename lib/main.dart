@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.home: (context) => const HomeScreen(),
         AppRoutes.detail: (context) => const DetailScreen(),
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -30,6 +30,14 @@ class PokemonHttp {
             .cast<String>()
             .toList() as List<String>,
         move: body['moves'][0]['move']['name'].toString(),
+        stats: {
+          'hp': int.parse(body['stats'][0]['base_stat'].toString()),
+          'atk': int.parse(body['stats'][1]['base_stat'].toString()),
+          'def': int.parse(body['stats'][2]['base_stat'].toString()),
+          'satk': int.parse(body['stats'][3]['base_stat'].toString()),
+          'sdef':int.parse(body['stats'][4]['base_stat'].toString()),
+          'spd': int.parse(body['stats'][5]['base_stat'].toString()),
+        }
       );
 
       pokemons.add(pokemon);
